@@ -7,7 +7,7 @@ test_x,  test_y  = MNIST.testdata();
 preview_img = zeros(size(train_x, 1), 0)
 
 for i = 1:10
-    preview_img = hcat(preview_img, train_x[:, :, i])
+    global preview_img = hcat(preview_img, train_x[:, :, i])
 end
 
 imshow(Gray.(preview_img))

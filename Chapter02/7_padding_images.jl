@@ -12,8 +12,6 @@ imshow(img)
 
 
 # create a border of a fixed size based on a content of an image
-using Images, ImageView
-
 pad_top = 25
 pad_bottom = 25
 

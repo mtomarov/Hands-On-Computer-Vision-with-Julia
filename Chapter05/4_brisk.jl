@@ -1,7 +1,7 @@
-using Images, ImageFeatures, CoordinateTransformations, ImageDraw
+using Images, ImageFeatures, CoordinateTransformations, ImageDraw, Rotations
 
-img1 = Gray.(load("cat-3417184_640.jpg"))
-img2 = Gray.(load("cat-3417184_640_watermarked.jpg"))
+img1 = Gray.(load("sample-images/cat-3417184_640.jpg"))
+img2 = Gray.(load("sample-images/cat-3417184_640_watermarked.jpg"))
 
 # rotate img2 around the center and resize it
 rot = recenter(RotMatrix(5pi/6), [size(img2)...] .÷ 2)  # a rotation around the center

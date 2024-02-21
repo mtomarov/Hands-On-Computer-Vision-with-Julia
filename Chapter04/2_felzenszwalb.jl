@@ -22,7 +22,7 @@ new_img = hcat(
     segment_to_image(segments_3)
 )
 
-new_img[:, img_width] = new_img[:, img_width*2] = colorant"black"
+new_img[:, img_width] = new_img[:, img_width*2] .= colorant"black"
 
 imshow(new_img)
 
@@ -45,6 +45,6 @@ new_img = hcat(
     segment_to_image(segments_3)
 )
 
-new_img[:, img_width] = new_img[:, img_width*2] = colorant"black"
+new_img[:, img_width] = new_img[:, img_width*2] .= colorant"black"
 
 imshow(new_img)

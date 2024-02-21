@@ -12,18 +12,18 @@ end
 
 # load images from url
 image_url = "https://cdn.pixabay.com/photo/2018/01/04/18/58/cats-3061372_640.jpg?attachment"
-downloaded_image_path = download(image_url)
+downloaded_image_path = Images.download(image_url)
 downloaded_image = load(downloaded_image_path)
 
 # download image to a predefined location
 image_url = "https://cdn.pixabay.com/photo/2018/01/04/18/58/cats-3061372_640.jpg?attachment"
-downloaded_image_path = download(image_url, 'sample-images/cats-3061372_640.jpg')
+downloaded_image_path = Images.download(image_url, "sample-images/cats-3061372_640.jpg")
 downloaded_image = load(downloaded_image_path)
 
 # read directory with images
 directory_path = "sample-images";
 directory_files = readdir(directory_path);
-directory_images = filter(x -> ismatch(r"\.(jpg|png|gif){1}$"i, x), directory_files);
+directory_images = filter(x -> match(r"\.(jpg|png|gif){1}$"i, x) != nothing, directory_files);
 
 for image_name in directory_images
     image_path = joinpath(directory_path, image_name);

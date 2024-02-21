@@ -34,7 +34,7 @@ for channel_id = 1:3
 
     # merge existing mask with a channel specific mask
     channel_mask = channel_min .< current_channel .< channel_max
-    img_mask = img_mask .& channel_mask
+    global img_mask = img_mask .& channel_mask
 end
 
 # apply mask

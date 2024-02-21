@@ -22,7 +22,7 @@ new_img = fill(color_black, size(img) .* (1, 3))
 new_img[:, 1:img_width] = segment_to_image(segments_1)
 new_img[:, img_width+1:img_width*2] = segment_to_image(segments_2)
 new_img[:, img_width*2+1:img_width*3] = segment_to_image(segments_3)
-new_img[:, img_width] = new_img[:, img_width*2] = RGB4(0.,0.,0.)
+new_img[:, img_width] = new_img[:, img_width*2] .= RGB4(0.,0.,0.)
 
 # prune segments
 deletion_rule = i -> (segment_pixel_count(segments_3,i) < 750)
@@ -52,7 +52,7 @@ new_img = fill(color_black, size(img) .* (1, 3))
 new_img[:, 1:img_width] = segment_to_image(segments_1)
 new_img[:, img_width+1:img_width*2] = segment_to_image(segments_2)
 new_img[:, img_width*2+1:img_width*3] = segment_to_image(segments_3)
-new_img[:, img_width] = new_img[:, img_width*2] = RGB4(0.,0.,0.)
+new_img[:, img_width] = new_img[:, img_width*2] .= RGB4(0.,0.,0.)
 
 deletion_rule = i -> (segment_pixel_count(segments_2,i) < 750)
 replacement_rule = (i,j) -> (-segment_pixel_count(segments_2, j))

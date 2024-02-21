@@ -1,7 +1,7 @@
 using Images, ImageFeatures, ImageDraw
 
-img1 = Gray.(load("cat-3417184_640.jpg"))
-img2 = Gray.(load("cat-3417184_640_watermarked.jpg"))
+img1 = Gray.(load("sample-images/cat-3417184_640.jpg"))
+img2 = Gray.(load("sample-images/cat-3417184_640_watermarked.jpg"))
 
 keypoints_1 = Keypoints(fastcorners(img1, 12, 0.5));
 keypoints_2 = Keypoints(fastcorners(img2, 12, 0.5));
